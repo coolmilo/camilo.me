@@ -1,31 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>camilo jimenbez - Creative</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-		}
-		.full-screen {
-			background: url('images/wall-art.jpg') no-repeat center center fixed; 
-			background-size: cover;
-			height: 100vh;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-			color: #fff;
-			font-size: 3vw;
-			font-weight: bold;
-			text-shadow: 2px 2px #000;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>camilo jimenez -- CReative</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Full background image */
+        .background-image {
+            background-image: url('your-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Image gallery */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About me section */
+        .about-me {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Media queries for responsiveness */
+        @media screen and (min-width: 781px) and (max-width: 1079px) {
+            /* Adjust styles for screens between 781px and 1079px */
+            .background-image {
+                font-size: 24px;
+            }
+        }
+
+        @media screen and (min-width: 1080px) and (max-width: 1279px) {
+            /* Adjust styles for screens between 1080px and 1279px */
+            .background-image {
+                font-size: 28px;
+            }
+        }
+
+        @media screen and (min-width: 1280px) {
+            /* Adjust styles for screens larger than 1279px */
+            .background-image {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
-	<div class="full-screen">
-		<h1>Camilo Jimenez </h1>
-	</div>
+    <!-- Full background image section -->
+    <div class="background-image">
+        <h1>Your Website</h1>
+    </div>
+
+    <!-- Image gallery section -->
+    <div class="image-gallery">
+        <!-- Replace the image sources with your own -->
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+        <img src="image4.jpg" alt="Image 4">
+        <img src="image5.jpg" alt="Image 5">
+        <img src="image6.jpg" alt="Image 6">
+        <img src="image7.jpg" alt="Image 7">
+        <img src="image8.jpg" alt="Image 8">
+        <img src="image9.jpg" alt="Image 9">
+        <img src="image10.jpg" alt="Image 10">
+        <img src="image11.jpg" alt="Image 11">
+        <img src="image12.jpg" alt="Image 12">
+    </div>
+
+    <!-- About me section -->
+    <div class="about-me">
+        <h2>About Me</h2>
+        <p>Your brief introduction goes here.</p>
+    </div>
 </body>
 </html>
