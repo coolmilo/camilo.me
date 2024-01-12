@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            font-size: 16px;
         }
 
         /* Full background image */
@@ -23,6 +24,23 @@
             align-items: center;
             color: #fff;
             text-align: center;
+        }
+
+        /* Header styles */
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        h4 {
+            font-size: 14px;
         }
 
         /* Image gallery */
@@ -48,7 +66,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-       /* Modal styles */
+        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -73,7 +91,7 @@
             width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+            box-shadow: none; /* Remove white glow */
         }
 
         .close {
@@ -86,7 +104,7 @@
         }
 
         .close:hover {
-            color: #ff6600;
+            color: #aaa;
         }
 
         /* About me section */
@@ -121,35 +139,14 @@
 <body>
     <!-- Full background image section -->
     <div class="background-image">
-        <h1>Some samples of my work</h1>
-    </div>
-    <!-- Modal -->
-    <div class="modal" id="modal" onclick="closeModal()">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modal-content">
-        </div>
+        <h1>Samples of my photography</h1>
     </div>
 
-    <script>
-        function openModal(imageSrc, altText) {
-            var modal = document.getElementById("modal");
-            var modalImg = document.getElementById("modal-content");
-
-            modal.style.display = "flex";
-            modalImg.src = imageSrc;
-            modalImg.alt = altText;
-        }
-
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
-    </script>
     <!-- Image gallery section -->
     <div class="image-gallery">
         <!-- Replace the image sources with your own -->
         <img src="images/cj01.png" alt="Image 1" onclick="openModal('images/cj01.png', 'Image 1')">
-        <img src="images/cj02.png" alt="Image 2" onclick="openModal('images/cj02.png', 'Image 2')">
+        <img src="images/cj02.png" alt="Image 2" onclick="openModal('images/cj02.png', 'Image 2')">    
         <img src="image3.jpg" alt="Image 3" onclick="openModal('image3.jpg', 'Image 3')">
         <img src="image4.jpg" alt="Image 4" onclick="openModal('image4.jpg', 'Image 4')">
         <img src="image5.jpg" alt="Image 5" onclick="openModal('image5.jpg', 'Image 5')">
@@ -162,16 +159,18 @@
         <img src="image12.jpg" alt="Image 12" onclick="openModal('image12.jpg', 'Image 12')">
     </div>
 
-    <!-- About me section -->
+       <!-- About me section -->
     <div class="about-me">
         <h2>About camilo</h2>
         <p>So what would you LIKE TO KNOW?</p>
     </div>
 
     <!-- Modal -->
-    <div class="modal" id="modal">
-        <span onclick="closeModal()" class="close">&times;</span>
-        <img id="modal-content">
+    <div class="modal" id="modal" onclick="closeModal()">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal">&times;</span>
+            <img id="modal-content">
+        </div>
     </div>
 
     <script>
