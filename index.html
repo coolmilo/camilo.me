@@ -48,7 +48,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Modal styles */
+       /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -61,12 +61,32 @@
             align-items: center;
         }
 
-        .modal img {
-            width: 80%;
+        .modal-content {
+            position: relative;
             max-width: 800px;
+            width: 80%;
+            max-height: 80%;
+            overflow: auto;
+        }
+
+        .modal img {
+            width: 100%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ff6600;
         }
 
         /* About me section */
@@ -103,7 +123,28 @@
     <div class="background-image">
         <h1>Some samples of my work</h1>
     </div>
+    <!-- Modal -->
+    <div class="modal" id="modal" onclick="closeModal()">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-content">
+        </div>
+    </div>
 
+    <script>
+        function openModal(imageSrc, altText) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modal-content");
+
+            modal.style.display = "flex";
+            modalImg.src = imageSrc;
+            modalImg.alt = altText;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
     <!-- Image gallery section -->
     <div class="image-gallery">
         <!-- Replace the image sources with your own -->
