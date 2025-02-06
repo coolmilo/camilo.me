@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Split-Flap Simulation</title>
+<style>
+body { font-family: monospace; font-size: 2em; } /* Monospace for alignment */
+.split-flap {
+  display: inline-block;
+  width: 1.2em; /* Adjust for character width */
+  height: 1.5em; /* Adjust for character height */
+  overflow: hidden; /* Hide the parts that aren't showing */
+  position: relative;
+}
+
+.char {
+  position: absolute;
+  top: 0; /* Start at the top */
+  transition: transform 0.3s ease-in-out; /* Smooth animation */
+}
+
+.char.current {
+  /* Nothing special here, just the currently displayed char */
+
+}
+
+.char.next {
+    transform: translateY(-100%); /* Positioned below current char */
+}
+
+.split-flap.animate .char {
+    transform: translateY(-100%); /* Animate to next char */
+}
+
+</style>
+</head>
+<body>
+
+<div class="split-flap" id="letter-a">
+    <div class="char current">A</div>
+    <div class="char next">B</div>
+</div>
+
+<button onclick="changeLetter('letter-a', 'C')">Change</button>
+
+<script>
+function changeLetter(elementId, newChar) {
+    const splitFlap = document.getElementById(elementId);
+    const current = splitFlap.querySelector('.char.current');
+    const next = splitFlap.querySelector('.char.next');
+
+    // Update the 'next' character
+    next.textContent = newChar;
+
+    // Trigger the animation
+    splitFlap.classList.add('animate');
+
+    // Reset for the next change
+    setTimeout(() => {
+        current.textContent = newChar;
+        splitFlap.classList.remove('animate');
+        current.classList.remove('current');
+        next.classList.add('current');
+        next.classList.remove('next');
+
+        current.style.transform = 'translateY(0)';
+        next.style.transform = 'translateY(-100%)';
+
+        current.classList.add('next');
+        next.classList.remove('current');
+
+    }, 300); // Match the transition time
+
+}
+</script>
+
+</body>
+</html>
